@@ -108,7 +108,7 @@ ggplot(
     ## Warning: Removed 51 rows containing non-finite outside the scale range
     ## (`stat_density()`).
 
-![](lab-02_files/figure-gfm/plastic-waste-density-4.png)<!-- --> \## Ex.
+![](lab-02_files/figure-gfm/plastic-waste-density-4.png)<!-- --> \#Ex.
 2.1: Recreate the density plots above using a different (lower) alpha
 level that works better for displaying the density curves for all
 continents.
@@ -175,42 +175,155 @@ ggplot(
     ## (`stat_density()`).
 
 ![](lab-02_files/figure-gfm/unnamed-chunk-1-4.png)<!-- --> \## EX. 2.2:
-aesthetic mappings like different color are linked to data variables,
-it’s a dynamic way to represent data. Alpha level, is a characteristic
-of the geom that maintains visual consistency by controlling element
-transparency across the plot. in other word, Alpha level is the
-transparency level, which stay unchanged regardless of how data points
-are altered.
+aesthetic mappings are linked to data variables, it’s a dynamic way to
+represent data. Alpha level, is a characteristic of the geom that
+maintains visual consistency by controlling element transparency across
+the plot. in other word, Alpha level is the transparency level, which
+stay unchanged regardless of how data points are altered.
 
 ### Exercise 3
 
+\#I filling the color and give my plot a name.
+
 ``` r
 # insert code here
+ggplot(
+  data = plastic_waste,
+  mapping = aes(
+    x = continent,
+    y = plastic_waste_per_cap
+  )
+) +
+ geom_boxplot(fill = "skyblue") +
+  ggtitle("Box Plot: Plastic Waste per Capita by Continent")
 ```
+
+    ## Warning: Removed 51 rows containing non-finite outside the scale range
+    ## (`stat_boxplot()`).
+
+![](lab-02_files/figure-gfm/plastic-waste-violin-1.png)<!-- -->
+
+``` r
+ggplot(
+  data = plastic_waste,
+  mapping = aes(
+    x = continent,
+    y = plastic_waste_per_cap
+  )
+) +
+geom_violin(fill = "lightpink", alpha = 0.2) +
+  ggtitle("Violin Plot: Plastic Waste per Capita by Continent")
+```
+
+    ## Warning: Removed 51 rows containing non-finite outside the scale range
+    ## (`stat_ydensity()`).
+
+![](lab-02_files/figure-gfm/plastic-waste-violin-2.png)<!-- -->
+
+\#answer for Ex. 3.1: violin plot reveal the shape and density of the
+data; and box plot reveal the median and it also allow for comparisons
+of the central tendency.
 
 ### Exercise 4
 
-Remove this text, and add your answer for Exercise 4 here.
+``` r
+# insert code here
+
+ggplot(
+  data = plastic_waste,
+  mapping = aes(
+    x = mismanaged_plastic_waste_per_cap,
+    y = plastic_waste_per_cap
+  )
+) +
+ geom_point()
+```
+
+    ## Warning: Removed 51 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](lab-02_files/figure-gfm/plastic-waste-mismanaged-1.png)<!-- -->
+\#answer for Ex. 4.1: A large number of data points are concentrated at
+lower values for both variables. And it appears to be a weak positive
+relationship between plastic waste per capita and mismanaged plastic
+waste per capita. As plastic waste per capita increases, mismanaged
+plastic waste per capita also tends to increase, tho this trend is not
+strongly linear. There is a clear outlier with a very high plastic waste
+per capita.
 
 ``` r
 # insert code here
+ggplot(
+  data = plastic_waste,
+  mapping = aes(
+    x = mismanaged_plastic_waste_per_cap,
+    y = plastic_waste_per_cap,
+    color = continent
+  )
+) +
+ geom_point(alpha = 0.5)
 ```
+
+    ## Warning: Removed 51 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](lab-02_files/figure-gfm/plastic-waste-mismanaged-continent-1.png)<!-- -->
+\# answer for Ex 4.2: Africa and Asia: Tend to cluster around low values
+for both plastic waste per capita and mismanaged plastic waste per
+capita.These regions may generate less plastic waste per person but
+maybe struggle with waste management systems. \# Europe and North
+America: seems like to have higher plastic waste per capita than Africa
+and Asia.But mismanaged plastic waste per capita remains relatively low,
+indicating better waste management infrastructure.
+
+# Oceania:Similar to Europe and North America, with low levels of mismanaged plastic waste and relatively high plastic waste per capita. South America: Shows a wide range of variation in mismanaged plastic waste per capita, with some points extending to higher values than other continents.
 
 ``` r
 # insert code here
+ggplot(
+  data = plastic_waste,
+  mapping = aes(
+    x = total_pop,
+    y = plastic_waste_per_cap
+  )
+) +
+ geom_point()
 ```
+
+    ## Warning: Removed 61 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](lab-02_files/figure-gfm/plastic-waste-population-total-1.png)<!-- -->
 
 ``` r
 # insert code here
+ggplot(
+  data = plastic_waste,
+  mapping = aes(
+    x = coastal_pop,
+    y = plastic_waste_per_cap
+  )
+) +
+ geom_point()
 ```
 
-``` r
-# insert code here
-```
+    ## Warning: Removed 51 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](lab-02_files/figure-gfm/plastic-waste-population-coastal-1.png)<!-- -->
+\# answer for Ex.4.3 ⬇️
+
+\#for total_pop: The points are clustered near the lower values for
+total population, with only a few points spread across higher population
+ranges. there’s no clear linear association between totap_pop and
+plastic waste per capita. total_pop does not seem to directly predict
+plastic waste per cap.
+
+# for coastal_pop: Similar to the total_pop scatterplot, points are concentrated at lower coastal population values, with a few outliers at higher coastal population values.There does not appear to be a strong linear association here either.
+
+# None of of these pairs of variables appear to be more strongly linearly associated than another; hard to identify any trends here.
 
 ### Exercise 5
-
-Remove this text, and add your answer for Exercise 5 here.
 
 ``` r
 # insert code here
