@@ -225,7 +225,7 @@ ggplot(
     color = continent
   )
 ) +
- geom_point() + geom_smooth()
+ geom_smooth()
 
 ```
 

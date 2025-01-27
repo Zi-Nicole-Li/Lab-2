@@ -9,5 +9,5 @@
 "0","    color = continent"
 "0","  )"
 "0",") +"
-"0"," geom_point() + geom_smooth()"
+"0"," geom_smooth()"
 "0",""

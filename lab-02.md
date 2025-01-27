@@ -912,15 +912,12 @@ ggplot(
     color = continent
   )
 ) +
- geom_point() + geom_smooth()
+ geom_smooth()
 ```
 
     ## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
 
     ## Warning: Removed 51 rows containing non-finite outside the scale range
     ## (`stat_smooth()`).
-
-    ## Warning: Removed 51 rows containing missing values or values outside the scale range
-    ## (`geom_point()`).
 
 ![](lab-02_files/figure-gfm/recreate-viz-1.png)<!-- -->
