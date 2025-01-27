@@ -113,11 +113,31 @@ ggplot(
 
 
 ### Exercise 3
-
-
+# I've done some online research for this EX, and I filling the color and give my plot a name. 
 ```{r plastic-waste-violin}
 # insert code here
+ggplot(
+  data = plastic_waste,
+  mapping = aes(
+    x = continent,
+    y = plastic_waste_per_cap
+  )
+) +
+ geom_boxplot(fill = "skyblue") +
+  ggtitle("Box Plot: Plastic Waste per Capita by Continent")
+
+ggplot(
+  data = plastic_waste,
+  mapping = aes(
+    x = continent,
+    y = plastic_waste_per_cap
+  )
+) +
+geom_violin(fill = "lightpink", alpha = 0.2) +
+  ggtitle("Violin Plot: Plastic Waste per Capita by Continent")
 ```
+
+## answer for Ex. 3.1: violin plot reveal the shape and density of the data; and box plot reveal the median and it also allow for comparisons of the central tendency.
 
 ### Exercise 4
 
