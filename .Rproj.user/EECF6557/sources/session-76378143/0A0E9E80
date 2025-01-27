@@ -3,7 +3,7 @@
     "path": "~/Documents/GitHub/Lab-2/lab-02.Rmd",
     "project_path": "lab-02.Rmd",
     "type": "r_markdown",
-    "hash": "3578953114",
+    "hash": "2795158079",
     "contents": "",
     "dirty": false,
     "created": 1737987438026.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "209,14",
-        "scrollLine": "204"
+        "cursorPosition": "228,0",
+        "scrollLine": "214"
     },
     "folds": "",
-    "lastKnownWriteTime": 1738019397,
+    "lastKnownWriteTime": 1738020952,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1738019397541,
+    "last_content_update": 1738020952156,
     "read_only": false,
     "read_only_alternatives": []
 }

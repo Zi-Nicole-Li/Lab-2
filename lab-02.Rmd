@@ -210,6 +210,23 @@ ggplot(
 ### Exercise 5
 ```{r recreate-viz}
 # insert code here
+plastic_waste <- read.csv("data/plastic-waste.csv")
+
+plastic_waste %>%
+  filter(plastic_waste_per_cap <= 3.5)
+
+plastic_waste$coastal_pop_proportion <- plastic_waste$coastal_pop / plastic_waste$total_pop
+
+ggplot(
+  data = plastic_waste,
+  mapping = aes(
+    x = coastal_pop,
+    y = plastic_waste_per_cap,
+    color = continent
+  )
+) +
+ geom_point() + geom_smooth()
+
 ```
 
 
